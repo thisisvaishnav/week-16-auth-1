@@ -58,3 +58,27 @@ function callbackError(err) {
 fsReadPromisified('file.txt', 'utf8')
     .then(callback)
     .catch(callbackError);
+
+
+
+    // Async/await is a syntactical sugar over promises that makes asynchronous code 
+    // look and behave more like synchronous code.
+
+
+    async function fsReadPromisified(fileURLToPath, encoding) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(fileURLToPath, encoding, (err, data) => {
+            if (err) reject(err);
+            else resolve(data);
+        });
+    });
+}
+
+    async function readfile() {
+        try {
+            const data = await fsReadPromisified('file.txt', 'utf8');
+            console.log(data);
+        } catch (err) {
+            console.log(err);
+        }
+    }
