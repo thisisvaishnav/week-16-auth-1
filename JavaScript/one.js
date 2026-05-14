@@ -58,6 +58,7 @@ function callbackError(err) {
 fsReadPromisified('file.txt', 'utf8')
     .then(callback)
     .catch(callbackError);
+<<<<<<< HEAD
 
 
 
@@ -82,3 +83,11 @@ fsReadPromisified('file.txt', 'utf8')
             console.log(err);
         }
     }
+=======
+    .then( () => {
+        console.log("file read successfully");
+    } )
+    .catch( (err) => {
+        console.log(err);
+    } );
+>>>>>>> 3a8fdaa (push to main branch)
