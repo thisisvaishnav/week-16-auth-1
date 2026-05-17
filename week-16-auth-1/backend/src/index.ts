@@ -27,7 +27,7 @@ app.post("/signup", (req, res) => {
     JWT_SECRET,
     { expiresIn: "1h" },
   );
-
+  // browser => cookies => token="skdfajwr23r;j43 "
   res.cookie("token", token);
   res.send("Logged in!");
 });
